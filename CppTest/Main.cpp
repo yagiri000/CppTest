@@ -9,14 +9,9 @@
 std::function<float(float)> MakeFuncFromPoints(const std::vector<std::pair<float, float>>& points)
 {
 	return [&](float x) {
-		int count = 0;
-		for (const auto& i : points) {
-			if (x < i.first - 1e-04) {
-				break;
-			}
-			count++;
-		}
-		count = std::min(count, (int)points.size()-1);
+		int count = std::lower_bound(points.begin(), points.end(), std::make_pair(x, 0.0f)) - points.begin();
+		if (count == 0) return points[0].second;
+		if (count == points.size()) return points.back().second;
 		float x1 = points[count - 1].first;
 		float y1 = points[count - 1].second;
 		float x2 = points[count].first;
