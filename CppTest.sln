@@ -61,6 +61,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LambdaAndMove", "LambdaAndM
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LambdaForward", "LambdaForward\LambdaForward.vcxproj", "{FFB5F0DC-C9E3-4511-B111-2A1CD333CC58}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SetPtrFromUniqurPtrArray", "SetPtrFromUniqurPtrArray\SetPtrFromUniqurPtrArray.vcxproj", "{AD882E43-B5E1-4C20-A344-AB261F0E228B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -301,6 +303,14 @@ Global
 		{FFB5F0DC-C9E3-4511-B111-2A1CD333CC58}.Release|x64.Build.0 = Release|x64
 		{FFB5F0DC-C9E3-4511-B111-2A1CD333CC58}.Release|x86.ActiveCfg = Release|Win32
 		{FFB5F0DC-C9E3-4511-B111-2A1CD333CC58}.Release|x86.Build.0 = Release|Win32
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Debug|x64.ActiveCfg = Debug|x64
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Debug|x64.Build.0 = Debug|x64
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Debug|x86.ActiveCfg = Debug|Win32
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Debug|x86.Build.0 = Debug|Win32
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Release|x64.ActiveCfg = Release|x64
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Release|x64.Build.0 = Release|x64
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Release|x86.ActiveCfg = Release|Win32
+		{AD882E43-B5E1-4C20-A344-AB261F0E228B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
