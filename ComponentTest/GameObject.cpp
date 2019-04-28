@@ -1,29 +1,23 @@
 #include "Component.h"
 #include "GameObject.h"
+#include "Transform.h"
+#include "Collision.h"
+
+GameObject::GameObject()
+{
+    AddComponent(std::make_unique<Transform>());
+}
 
 void GameObject::AddComponent(std::unique_ptr<Component>&& cmp)
 {
-    components.emplace_back(std::move(cmp));
-}
-
-Component* GameObject::GetComponent(Tag tag)
-{
-    for (auto i = components.begin(); i < components.end(); i++)
-    {
-        if ((*i)->GetTag() == tag)
-        {
-            return i->get();
-        }
-    }
-    return nullptr;
+    m_Components.emplace(cmp->GetType(), std::move(cmp));
 }
 
 void GameObject::Update()
 {
-    printf("GO : %x ", (uint32_t)this);
-    for (auto&& i : components)
+    printf("\nGO : %x ", (uint32_t)this);
+    for (auto&& i : m_Components)
     {
-        i->Update();
+        i.second->Update();
     }
-    printf("\n");
 }

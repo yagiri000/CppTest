@@ -1,6 +1,7 @@
 #pragma once
 
-enum class Tag
+// FIXME Component::Type�ɕύX
+enum class ComponentType
 {
     Transform,
     Collision

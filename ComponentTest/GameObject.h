@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <memory>
 #include <functional>
+#include <unordered_map>
 #include "Tag.h"
 
 class Component;
@@ -12,13 +13,24 @@ class Component;
 class GameObject
 {
 public:
-    GameObject() = default;
+    GameObject();
     virtual ~GameObject() = default;
-    std::vector<std::unique_ptr<Component>> components;
 
     void AddComponent(std::unique_ptr<Component>&& cmp);
+    template <typename T>
+    T* GetComponent(ComponentType tag)
+    {
+        auto iter = m_Components.find(tag);
+        if (iter != m_Components.end())
+        {
+            return dynamic_cast<T*>( iter->second.get());
+        }
 
-    Component* GetComponent(Tag tag);
+        return nullptr;
+    }
 
-    void Update();
+    virtual void Update();
+
+private:
+    std::unordered_map<ComponentType, std::unique_ptr<Component>> m_Components;
 };
