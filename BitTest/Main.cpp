@@ -4,6 +4,10 @@
 #include <vector>
 #include <array>
 
+// 例えばボタンの入力状態ビット列に対して、Enum Classをビット演算に使うテスト
+// (size_t)への変換が必要であり、他クラスとのビット演算が可能なので微妙
+// TMPを用いて全体的に書き直す必要がある
+
 enum class Buttons
 {
 	A = 1,
